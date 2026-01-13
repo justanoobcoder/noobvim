@@ -1,0 +1,19 @@
+let
+  ignore_filetypes = ["dashboard" "startify" "ministarter"];
+in {
+  visuals.indent-blankline = {
+    enable = true;
+    setupOpts = {
+      scope.enabled = false;
+      indent.char = "▏";
+      exclude.filetypes = ignore_filetypes;
+    };
+  };
+  mini.indentscope = {
+    enable = true;
+    setupOpts = {
+      symbol = "▏";
+      inherit ignore_filetypes;
+    };
+  };
+}
