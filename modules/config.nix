@@ -8,6 +8,6 @@
     providers.wl-copy.enable = true;
   };
   additionalRuntimePaths = [
-    "$HOME/.config/noobvim/runtime"
+    ../runtime
   ];
 }
