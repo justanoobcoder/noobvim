@@ -29,5 +29,8 @@
   languages = lib.mkMerge [
     (import ./bash.nix)
     (import ./clang.nix)
+    (import ./nix.nix)
+    (import ./lua.nix)
+    (import ./rust.nix)
   ];
 }
