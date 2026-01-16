@@ -11,7 +11,7 @@
         };
         use_libuv_file_watcher = true;
       };
-      close_if_last_window = true;
+      close_if_last_window = false;
     };
   };
 }
