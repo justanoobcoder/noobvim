@@ -76,7 +76,8 @@
       key = "<leader>bd";
       mode = "n";
       silent = true;
-      action = ":bd<CR>";
+      action = "function() vim.cmd('Neotree close'); vim.cmd('bd') end";
+      lua = true;
     }
     {
       key = "<leader>cf";
