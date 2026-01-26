@@ -5,7 +5,7 @@
     treesitter.enable = true;
     extensions.crates-nvim = {
       enable = true;
-      setupOpts.completion.crates.enable = true;
+      setupOpts.completion.crates.enabled = true;
     };
   };
 }
