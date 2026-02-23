@@ -31,6 +31,12 @@
       action = "<cmd>Telescope diagnostics<CR>";
     }
     {
+      key = "<leader>fl";
+      mode = "n";
+      silent = true;
+      action = "<cmd>Telescope persisted<CR>";
+    }
+    {
       key = "<C-h>";
       mode = "n";
       silent = true;
