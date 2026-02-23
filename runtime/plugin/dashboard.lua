@@ -49,7 +49,7 @@ local center = {
     icon = " ",
     desc = "Restore Session",
     key = "s",
-    action = "SessionLoad",
+    action = "Persisted load",
   },
   {
     icon = " ",
