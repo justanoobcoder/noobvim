@@ -12,6 +12,7 @@
     (import ./plugins/conform.nix {inherit pkgs;})
     (import ./plugins/persist.nix {inherit pkgs;})
     (import ./plugins/neo-tree.nix)
+    (import ./plugins/telescope.nix)
     (import ./plugins/nvim-cmp.nix)
     (import ./plugins/comment-nvim.nix)
     (import ./plugins/colorizer.nix)
