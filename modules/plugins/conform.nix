@@ -24,6 +24,6 @@
     clang-tools #c/c++
     stylua # lua
     shfmt # bash
-    rustfmt
+    rustfmt # rust
   ];
 }
