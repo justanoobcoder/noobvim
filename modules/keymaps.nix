@@ -37,6 +37,18 @@
       action = "<cmd>Telescope persisted<CR>";
     }
     {
+      key = "y";
+      mode = ["n" "v"];
+      silent = true;
+      action = "\"+y";
+    }
+    {
+      key = "p";
+      mode = ["n" "v"];
+      silent = true;
+      action = "\"+p";
+    }
+    {
       key = "<C-h>";
       mode = "n";
       silent = true;
