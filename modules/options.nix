@@ -4,5 +4,6 @@
     tabstop = 2;
     shiftwidth = 2;
     smartindent = true;
+    scrolloff = 5;
   };
 }
