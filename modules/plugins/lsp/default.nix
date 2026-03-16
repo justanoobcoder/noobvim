@@ -32,5 +32,6 @@
     (import ./nix.nix)
     (import ./lua.nix)
     (import ./rust.nix)
+    (import ./java.nix)
   ];
 }

@@ -9,6 +9,10 @@
             "--style={IndentWidth: 4, TabWidth: 4}"
           ];
         };
+        java_format = {
+          command = "google-java-format";
+          args = ["--aosp" "-"];
+        };
       };
       formatters_by_ft = {
         c = ["clang_format"];
@@ -16,6 +20,7 @@
         lua = ["stylua"];
         bash = ["shfmt"];
         rust = ["rustfmt"];
+        java = ["java_format"];
       };
     };
   };
@@ -25,5 +30,6 @@
     stylua # lua
     shfmt # bash
     rustfmt # rust
+    google-java-format
   ];
 }
