@@ -103,5 +103,12 @@
       silent = true;
       action = ":Format<CR>";
     }
+    {
+      key = "<leader>ca";
+      mode = "n";
+      silent = true;
+      action = "function() vim.lsp.buf.code_action() end";
+      lua = true;
+    }
   ];
 }
