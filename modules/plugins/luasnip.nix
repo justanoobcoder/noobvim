@@ -25,6 +25,8 @@
           trigger = "_stlw";
           body = ''
             class $1 extends StatelessWidget {
+              const $1({super.key});
+
               @override
                 Widget build(BuildContext context) {
                   return const Placeholder();
