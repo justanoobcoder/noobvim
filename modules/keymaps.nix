@@ -37,6 +37,12 @@
       action = "<cmd>Telescope persisted<CR>";
     }
     {
+      key = "<leader>sv";
+      mode = "n";
+      silent = true;
+      action = "<cmd>SupermavenToggle<CR>";
+    }
+    {
       key = "y";
       mode = ["n" "v"];
       silent = true;
