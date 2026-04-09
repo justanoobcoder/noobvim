@@ -10,6 +10,16 @@
           enabled = true;
         };
         use_libuv_file_watcher = true;
+        filtered_items = {
+          visible = false;
+          hide_dotfiles = true;
+          hide_gitignored = true;
+          hide_ignored = true;
+          hide_by_pattern = [
+            "*.freezed.dart"
+            "*.g.dart"
+          ];
+        };
       };
       close_if_last_window = false;
     };
