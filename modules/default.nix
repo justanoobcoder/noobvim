@@ -19,6 +19,7 @@
     (import ./plugins/indent-blankline.nix)
     (import ./plugins/toggleterm.nix)
     (import ./plugins/luasnip.nix)
+    (import ./plugins/copilot.nix)
     (import ./plugins/lsp {inherit lib;})
   ];
 }
