@@ -1,6 +1,12 @@
 {
   keymaps = [
     {
+      key = "<leader><leader>";
+      mode = "n";
+      silent = true;
+      action = "za";
+    }
+    {
       key = "<leader>ff";
       mode = "n";
       silent = true;
