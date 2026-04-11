@@ -34,6 +34,35 @@
             }
           '';
         }
+        {
+          trigger = "_csfw";
+          body = ''
+            class $1 extends ConsumerStatefulWidget {
+              const $1({super.key});
+
+              @override
+              ConsumerState<$1> createState() => _$1State();
+            }
+
+            class _$1State extends ConsumerState<$1> {
+              @override
+              Widget build(BuildContext context) {
+                return const Placeholder();
+              }
+            }
+          '';
+        }
+        {
+          trigger = "_cslw";
+          body = ''
+            class $1 extends ConsumerWidget {
+              @override
+              Widget build(BuildContext context, WidgetRef ref) {
+                return const Placeholder();
+              }
+            }
+          '';
+        }
       ];
     };
   };
