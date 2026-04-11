@@ -21,6 +21,7 @@
     (import ./plugins/luasnip.nix)
     (import ./plugins/copilot.nix)
     (import ./plugins/supermaven.nix)
+    (import ./plugins/ufo.nix)
     (import ./plugins/lsp {inherit lib;})
   ];
 }
