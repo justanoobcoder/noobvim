@@ -2,6 +2,28 @@
   snippets.luasnip = {
     enable = true;
     customSnippets.snipmate = {
+      nix = [
+        {
+          trigger = "_nixmd";
+          body = ''
+            {
+              flake.nixosModules.$1 = _: {
+                $2
+              };
+            }
+          '';
+        }
+        {
+          trigger = "_hmmd";
+          body = ''
+            {
+              flake.homeModules.$1 = _: {
+                $2
+              };
+            }
+          '';
+        }
+      ];
       dart = [
         {
           trigger = "_stfw";
