@@ -1,7 +1,7 @@
 {
   go = {
     enable = true;
-    lsp.enable = false;
+    lsp.enable = true;
     treesitter.enable = true;
   };
 }

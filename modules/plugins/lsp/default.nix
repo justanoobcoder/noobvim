@@ -34,5 +34,6 @@
     (import ./rust.nix)
     (import ./java.nix)
     (import ./dart.nix)
+    (import ./go.nix)
   ];
 }
