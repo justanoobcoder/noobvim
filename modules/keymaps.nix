@@ -130,7 +130,7 @@
     }
     {
       key = "<leader>sr";
-      mode = "n";
+      mode = ["n" "x"];
       silent = true;
       action = ":GrugFar<CR>";
     }
