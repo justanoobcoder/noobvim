@@ -122,5 +122,11 @@
       action = "function() vim.lsp.buf.code_action() end";
       lua = true;
     }
+    {
+      key = "-";
+      mode = "n";
+      silent = true;
+      action = ":Oil<CR>";
+    }
   ];
 }
