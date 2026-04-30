@@ -128,5 +128,17 @@
       silent = true;
       action = ":Oil<CR>";
     }
+    {
+      key = "<leader>sr";
+      mode = "n";
+      silent = true;
+      action = ":GrugFar<CR>";
+    }
+    {
+      key = "<leader>sf";
+      mode = "n";
+      silent = true;
+      action = ":lua require('grug-far').open({ prefills = { paths = vim.fn.expand('%') } })<CR>";
+    }
   ];
 }

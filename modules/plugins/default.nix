@@ -12,6 +12,9 @@
   ui = {
     illuminate.enable = true;
   };
-  utility.oil-nvim.enable = true;
+  utility = {
+    oil-nvim.enable = true;
+    grug-far-nvim.enable = true;
+  };
   visuals.rainbow-delimiters.enable = true;
 }
