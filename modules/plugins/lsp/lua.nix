@@ -1,6 +1,6 @@
 {
   lua = {
-    enable = true;
+    enable = false;
     lsp.enable = true;
     lsp.servers = ["lua-language-server"];
     treesitter.enable = true;
