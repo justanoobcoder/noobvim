@@ -16,7 +16,7 @@
       };
       formatters_by_ft = {
         c = ["clang_format"];
-        nix = ["alejandra"];
+        nix = ["nixfmt"];
         lua = ["stylua"];
         bash = ["shfmt"];
         rust = ["rustfmt"];
@@ -25,7 +25,7 @@
     };
   };
   extraPackages = with pkgs; [
-    alejandra # nix
+    nixfmt # nix
     clang-tools #c/c++
     stylua # lua
     shfmt # bash
