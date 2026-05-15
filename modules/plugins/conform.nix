@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   formatter.conform-nvim = {
     enable = true;
     setupOpts = {
@@ -11,22 +12,25 @@
         };
         java_format = {
           command = "google-java-format";
-          args = ["--aosp" "-"];
+          args = [
+            "--aosp"
+            "-"
+          ];
         };
       };
       formatters_by_ft = {
-        c = ["clang_format"];
-        nix = ["nixfmt"];
-        lua = ["stylua"];
-        bash = ["shfmt"];
-        rust = ["rustfmt"];
-        java = ["java_format"];
+        c = [ "clang_format" ];
+        nix = [ "nixfmt" ];
+        lua = [ "stylua" ];
+        bash = [ "shfmt" ];
+        rust = [ "rustfmt" ];
+        java = [ "java_format" ];
       };
     };
   };
   extraPackages = with pkgs; [
     nixfmt # nix
-    clang-tools #c/c++
+    clang-tools # c/c++
     stylua # lua
     shfmt # bash
     rustfmt # rust

@@ -1,4 +1,5 @@
-{lib, ...}: {
+{ lib, ... }:
+{
   lsp = {
     enable = true;
     lspconfig.enable = true;
@@ -6,8 +7,8 @@
     formatOnSave = false;
     servers.amber = {
       enable = false;
-      cmd = ["amber-lsp"];
-      filetypes = ["amber"];
+      cmd = [ "amber-lsp" ];
+      filetypes = [ "amber" ];
     };
   };
   diagnostics = {

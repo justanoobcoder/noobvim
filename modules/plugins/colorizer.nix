@@ -4,7 +4,7 @@
     setupOpts = {
       user_default_options.names = false;
       filetypes = {
-        "*" = {};
+        "*" = { };
         css = {
           names = true;
         };

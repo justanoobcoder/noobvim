@@ -14,7 +14,10 @@
     }
     {
       key = "<leader>fg";
-      mode = ["n" "x"];
+      mode = [
+        "n"
+        "x"
+      ];
       silent = true;
       action = "<cmd>Telescope live_grep<CR>";
     }
@@ -50,13 +53,19 @@
     }
     {
       key = "y";
-      mode = ["n" "v"];
+      mode = [
+        "n"
+        "v"
+      ];
       silent = true;
       action = "\"+y";
     }
     {
       key = "p";
-      mode = ["n" "v"];
+      mode = [
+        "n"
+        "v"
+      ];
       silent = true;
       action = "\"+p";
     }
@@ -130,7 +139,10 @@
     }
     {
       key = "<leader>sr";
-      mode = ["n" "x"];
+      mode = [
+        "n"
+        "x"
+      ];
       silent = true;
       action = ":GrugFar<CR>";
     }

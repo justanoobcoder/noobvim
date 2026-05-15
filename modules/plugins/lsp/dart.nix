@@ -12,4 +12,3 @@
     treesitter.enable = true;
   };
 }
-

@@ -2,15 +2,16 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   config.vim = lib.mkMerge [
     (import ./config.nix)
     (import ./options.nix)
     (import ./keymaps.nix)
     (import ./theme.nix)
     (import ./plugins)
-    (import ./plugins/conform.nix {inherit pkgs;})
-    (import ./plugins/persist.nix {inherit pkgs;})
+    (import ./plugins/conform.nix { inherit pkgs; })
+    (import ./plugins/persist.nix { inherit pkgs; })
     (import ./plugins/neo-tree.nix)
     (import ./plugins/telescope.nix)
     (import ./plugins/nvim-cmp.nix)
@@ -21,6 +22,6 @@
     (import ./plugins/luasnip.nix)
     (import ./plugins/supermaven.nix)
     (import ./plugins/ufo.nix)
-    (import ./plugins/lsp {inherit lib;})
+    (import ./plugins/lsp { inherit lib; })
   ];
 }

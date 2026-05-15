@@ -1,6 +1,11 @@
 let
-  ignore_filetypes = ["dashboard" "startify" "ministarter"];
-in {
+  ignore_filetypes = [
+    "dashboard"
+    "startify"
+    "ministarter"
+  ];
+in
+{
   visuals.indent-blankline = {
     enable = true;
     setupOpts = {
