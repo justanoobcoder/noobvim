@@ -25,6 +25,10 @@
         bash = [ "shfmt" ];
         rust = [ "rustfmt" ];
         java = [ "java_format" ];
+        javascript = [ "prettier" ];
+        typescript = [ "prettier" ];
+        css = [ "prettier" ];
+        html = [ "superhtml" ];
       };
     };
   };
@@ -34,6 +38,8 @@
     stylua # lua
     shfmt # bash
     rustfmt # rust
-    google-java-format
+    google-java-format # java
+    prettier # javascript/typescript
+    superhtml
   ];
 }

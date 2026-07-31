@@ -44,5 +44,8 @@
     (import ./java.nix)
     (import ./dart.nix)
     (import ./go.nix)
+    (import ./typescript.nix)
+    (import ./css.nix)
+    (import ./html.nix)
   ];
 }
