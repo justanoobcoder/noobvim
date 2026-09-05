@@ -28,6 +28,8 @@
           hide_by_pattern = [
             "*.freezed.dart"
             "*.g.dart"
+            "*.lock"
+            "compile_commands.json"
           ];
         };
       };
