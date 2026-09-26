@@ -3,12 +3,20 @@
   lsp = {
     enable = true;
     lspconfig.enable = true;
-    inlayHints.enable = true;
+    inlayHints.enable = false;
     formatOnSave = false;
     servers.amber = {
       enable = false;
       cmd = [ "amber-lsp" ];
       filetypes = [ "amber" ];
+    };
+    mappings = {
+      goToDeclaration = "gD";
+      goToDefinition = "gd";
+      goToType = "gt";
+      hover = "gh";
+      listReferences = "gr";
+      listDocumentSymbols = "<leader>lS";
     };
   };
   diagnostics = {

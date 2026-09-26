@@ -152,5 +152,11 @@
       silent = true;
       action = ":lua require('grug-far').open({ prefills = { paths = vim.fn.expand('%') } })<CR>";
     }
+    {
+      key = "<leader>il";
+      mode = "n";
+      silent = true;
+      action = ":lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>";
+    }
   ];
 }

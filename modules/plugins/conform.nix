@@ -4,12 +4,6 @@
     enable = true;
     setupOpts = {
       formatters = {
-        clang_format = {
-          command = "clang-format";
-          args = [
-            "--style={IndentWidth: 4, TabWidth: 4}"
-          ];
-        };
         java_format = {
           command = "google-java-format";
           args = [
@@ -17,9 +11,17 @@
             "-"
           ];
         };
+        toml_format = {
+          command = "taplo";
+          args = [
+            "fmt"
+            "-"
+          ];
+        };
       };
       formatters_by_ft = {
-        c = [ "clang_format" ];
+        c = [ "clang-format" ];
+        cpp = [ "clang-format" ];
         nix = [ "nixfmt" ];
         lua = [ "stylua" ];
         bash = [ "shfmt" ];
@@ -29,6 +31,7 @@
         typescript = [ "prettier" ];
         css = [ "prettier" ];
         html = [ "superhtml" ];
+        toml = [ "toml_format" ];
       };
     };
   };
@@ -41,5 +44,6 @@
     google-java-format # java
     prettier # javascript/typescript
     superhtml
+    taplo
   ];
 }

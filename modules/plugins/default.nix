@@ -7,7 +7,11 @@
     setupOpts.options.numbers = "none";
   };
   statusline.lualine.enable = true;
-  treesitter.enable = true;
+  treesitter = {
+    enable = true;
+    indent.enable = true;
+    indent.excludes = [ "cpp" ];
+  };
   dashboard.dashboard-nvim.enable = true;
   ui = {
     illuminate.enable = true;
