@@ -70,6 +70,24 @@
       action = "\"+p";
     }
     {
+      key = "<leader>p";
+      mode = [
+        "n"
+        "v"
+      ];
+      silent = true;
+      action = "\"\"p";
+    }
+    {
+      key = "<leader>P";
+      mode = [
+        "n"
+        "v"
+      ];
+      silent = true;
+      action = "\"\"P";
+    }
+    {
       key = "<C-h>";
       mode = "n";
       silent = true;
