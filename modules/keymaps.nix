@@ -150,7 +150,25 @@
       key = "<leader>sf";
       mode = "n";
       silent = true;
-      action = ":lua require('grug-far').open({ prefills = { paths = vim.fn.expand('%') } })<CR>";
+      action = ":lua require('grug-far').open({ prefills = { search = vim.fn.expand('<cword>'), paths = vim.fn.expand('%') } })<CR>";
+    }
+    {
+      key = "<leader>sF";
+      mode = "n";
+      silent = true;
+      action = ":lua require('grug-far').open({ prefills = { search = vim.fn.expand('<cword>') } })<CR>";
+    }
+    {
+      key = "<leader>sf";
+      mode = "v";
+      silent = true;
+      action = ":lua require('grug-far').with_visual_selection({ prefills = { paths = vim.fn.expand('%') } })<CR>";
+    }
+    {
+      key = "<leader>sF";
+      mode = "v";
+      silent = true;
+      action = ":lua require('grug-far').with_visual_selection()<CR>";
     }
     {
       key = "<leader>il";
