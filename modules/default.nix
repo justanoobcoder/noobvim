@@ -22,6 +22,7 @@
     (import ./plugins/luasnip.nix)
     (import ./plugins/supermaven.nix)
     (import ./plugins/ufo.nix)
+    (import ./plugins/flash.nix)
     (import ./plugins/lsp { inherit lib; })
   ];
 }
