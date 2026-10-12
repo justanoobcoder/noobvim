@@ -200,5 +200,11 @@
       silent = true;
       action = ":m '<-2<CR>gv=gv";
     }
+    {
+      key = "<leader>mc";
+      mode = "n";
+      silent = true;
+      action = ":MCstart<CR>";
+    }
   ];
 }
