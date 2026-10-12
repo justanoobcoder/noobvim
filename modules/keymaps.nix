@@ -88,6 +88,18 @@
       action = "\"\"P";
     }
     {
+      key = ">";
+      mode = "v";
+      silent = true;
+      action = ">gv";
+    }
+    {
+      key = "<";
+      mode = "v";
+      silent = true;
+      action = "<gv";
+    }
+    {
       key = "<C-h>";
       mode = "n";
       silent = true;
