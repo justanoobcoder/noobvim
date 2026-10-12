@@ -19,6 +19,7 @@
   utility = {
     oil-nvim.enable = true;
     grug-far-nvim.enable = true;
+    images.image-nvim.enable = true;
   };
   visuals.rainbow-delimiters.enable = true;
 }
