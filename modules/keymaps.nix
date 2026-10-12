@@ -158,5 +158,29 @@
       silent = true;
       action = ":lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>";
     }
+    {
+      key = "<C-j>";
+      mode = "n";
+      silent = true;
+      action = ":m .+1<CR>==";
+    }
+    {
+      key = "<C-k>";
+      mode = "n";
+      silent = true;
+      action = ":m .-2<CR>==";
+    }
+    {
+      key = "<C-j>";
+      mode = "v";
+      silent = true;
+      action = ":m '>+1<CR>gv=gv";
+    }
+    {
+      key = "<C-k>";
+      mode = "v";
+      silent = true;
+      action = ":m '<-2<CR>gv=gv";
+    }
   ];
 }
