@@ -48,12 +48,12 @@
     (import ./clang.nix)
     (import ./nix.nix)
     (import ./lua.nix)
-    # (import ./rust.nix)
-    (import ./java.nix)
+    (import ./rust.nix)
+    # (import ./java.nix)
     # (import ./dart.nix)
     # (import ./go.nix)
-    (import ./typescript.nix)
-    (import ./css.nix)
-    (import ./html.nix)
+    # (import ./typescript.nix)
+    # (import ./css.nix)
+    # (import ./html.nix)
   ];
 }
