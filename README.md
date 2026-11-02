@@ -8,57 +8,23 @@ This is my Neovim config using [nvf](https://github.com/NotAShelf/nvf).
 # Supported languages
 
 - Nix
-- Lua
 - Bash
 - Rust
 - C/C++
 
+More languages (Lua, Java, Dart, Go, TypeScript, CSS, HTML, TOML) are available
+and can be enabled by uncommenting them in `modules/languages/default.nix`.
+
 # Structure
 
-```
-.
-├── flake.lock
-├── flake.nix
-├── modules
-│   ├── config.nix
-│   ├── default.nix
-│   ├── keymaps.nix
-│   ├── options.nix
-│   ├── plugins
-│   │   ├── colorizer.nix
-│   │   ├── comment-nvim.nix
-│   │   ├── conform.nix
-│   │   ├── default.nix
-│   │   ├── indent-blankline.nix
-│   │   ├── lsp
-│   │   │   ├── bash.nix
-│   │   │   ├── clang.nix
-│   │   │   ├── default.nix
-│   │   │   ├── lua.nix
-│   │   │   ├── nix.nix
-│   │   │   └── rust.nix
-│   │   ├── neo-tree.nix
-│   │   ├── nvim-cmp.nix
-│   │   ├── persist.nix
-│   │   └── toggleterm.nix
-│   └── theme.nix
-└── runtime
-    ├── ftdetect
-    │   ├── amber.lua
-    │   └── zsh.lua
-    ├── ftplugin
-    │   ├── amber.lua
-    │   ├── c.lua
-    │   ├── kdl.lua
-    │   └── sh.lua
-    ├── plugin
-    │   ├── conform.lua
-    │   ├── dashboard.lua
-    │   ├── indent.lua
-    │   └── persisted.lua
-    └── syntax
-        └── amber.lua
-```
+- `flake.nix`: builds the Neovim package with [nvf](https://github.com/NotAShelf/nvf)
+- `modules/`: nvf modules, all imported from `modules/default.nix`
+  - `config.nix`, `options.nix`, `theme.nix`, `keymaps.nix`: general settings and keymaps
+  - `plugins/`: one file per plugin, holding its config and its keymaps
+  - `languages/`: one file per language (LSP, treesitter, formatter and its packages)
+- `runtime/`: plain Lua added to the runtime path
+  - `ftdetect/`, `ftplugin/`, `syntax/`: per-filetype detection and settings
+  - `plugin/`: autocommands and user commands loaded on startup
 
 ## Basic keybinds
 
@@ -72,6 +38,8 @@ This is my Neovim config using [nvf](https://github.com/NotAShelf/nvf).
 | \<leader>cf | Format file (if supported)
 | \<leader>bd | Delete current buffer
 | \<Ctrl>h/j/k/l | Move focus to other splited window
+| \<leader>j/k | Move line down/up
+| J/K (visual) | Move selection down/up
 | \<Shift>h/l | Move focus to other tab
 | \<Ctrl>/ | Toggle terminal
 

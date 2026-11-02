@@ -13,4 +13,4 @@ vim.bo.formatoptions = vim.bo.formatoptions .. "ro"
 vim.bo.comments = ":///,://"
 
 vim.b.did_ftplugin = "amber"
-vim.opt.colorcolumn = "80"
+vim.opt_local.colorcolumn = "80"

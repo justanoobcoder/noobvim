@@ -1,5 +1,3 @@
 {
-  ui.nvim-ufo = {
-    enable = true;
-  };
+  vim.ui.nvim-ufo.enable = true;
 }

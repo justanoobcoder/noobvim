@@ -1,64 +1,23 @@
+# General keymaps. Keymaps that belong to a plugin live next to that plugin's config.
 {
-  keymaps = [
+  vim.keymaps = [
     {
       key = "<leader><leader>";
       mode = "n";
-      silent = true;
       action = "za";
+      desc = "Toggle fold";
     }
-    {
-      key = "<leader>ff";
-      mode = "n";
-      silent = true;
-      action = "<cmd>Telescope find_files<CR>";
-    }
-    {
-      key = "<leader>fg";
-      mode = [
-        "n"
-        "x"
-      ];
-      silent = true;
-      action = "<cmd>Telescope live_grep<CR>";
-    }
-    {
-      key = "<leader>fb";
-      mode = "n";
-      silent = true;
-      action = "<cmd>Telescope buffers<CR>";
-    }
-    {
-      key = "<leader>fcb";
-      mode = "n";
-      silent = true;
-      action = "<cmd>Telescope current_buffer_fuzzy_find<CR>";
-    }
-    {
-      key = "<leader>fd";
-      mode = "n";
-      silent = true;
-      action = "<cmd>Telescope diagnostics<CR>";
-    }
-    {
-      key = "<leader>fl";
-      mode = "n";
-      silent = true;
-      action = "<cmd>Telescope persisted<CR>";
-    }
-    {
-      key = "<leader>sv";
-      mode = "n";
-      silent = true;
-      action = "<cmd>SupermavenToggle<CR>";
-    }
+    # Yank/paste go through the system clipboard, unless a register is given explicitly ("ay, "ap)
     {
       key = "y";
       mode = [
         "n"
         "v"
       ];
-      silent = true;
-      action = "\"+y";
+      expr = true;
+      lua = true;
+      action = "function() return vim.v.register == '\"' and '\"+y' or 'y' end";
+      desc = "Yank to clipboard";
     }
     {
       key = "p";
@@ -66,8 +25,10 @@
         "n"
         "v"
       ];
-      silent = true;
-      action = "\"+p";
+      expr = true;
+      lua = true;
+      action = "function() return vim.v.register == '\"' and '\"+p' or 'p' end";
+      desc = "Paste from clipboard";
     }
     {
       key = "<leader>p";
@@ -75,8 +36,8 @@
         "n"
         "v"
       ];
-      silent = true;
       action = "\"\"p";
+      desc = "Paste from unnamed register";
     }
     {
       key = "<leader>P";
@@ -84,157 +45,69 @@
         "n"
         "v"
       ];
-      silent = true;
       action = "\"\"P";
+      desc = "Paste from unnamed register (before)";
     }
     {
       key = ">";
       mode = "v";
-      silent = true;
       action = ">gv";
+      desc = "Indent and keep selection";
     }
     {
       key = "<";
       mode = "v";
-      silent = true;
       action = "<gv";
+      desc = "Dedent and keep selection";
     }
     {
       key = "<C-h>";
       mode = "n";
-      silent = true;
       action = "<C-w>h";
+      desc = "Focus left window";
     }
     {
       key = "<C-j>";
       mode = "n";
-      silent = true;
       action = "<C-w>j";
+      desc = "Focus lower window";
     }
     {
       key = "<C-k>";
       mode = "n";
-      silent = true;
       action = "<C-w>k";
+      desc = "Focus upper window";
     }
     {
       key = "<C-l>";
       mode = "n";
-      silent = true;
       action = "<C-w>l";
+      desc = "Focus right window";
     }
+    # Move lines: <C-j>/<C-k> are window navigation and <A-j>/<A-k> are taken by the desktop
     {
-      key = "<S-h>";
+      key = "<leader>j";
       mode = "n";
-      silent = true;
-      action = ":BufferLineCyclePrev<CR>";
-    }
-    {
-      key = "<S-l>";
-      mode = "n";
-      silent = true;
-      action = ":BufferLineCycleNext<CR>";
-    }
-    {
-      key = "<leader>e";
-      mode = "n";
-      silent = true;
-      action = ":Neotree toggle<CR>";
-    }
-    {
-      key = "<leader>bd";
-      mode = "n";
-      silent = true;
-      action = "function() vim.cmd('Neotree close'); vim.cmd('bd') end";
-      lua = true;
-    }
-    {
-      key = "<leader>cf";
-      mode = "n";
-      silent = true;
-      action = ":Format<CR>";
-    }
-    {
-      key = "<leader>ca";
-      mode = "n";
-      silent = true;
-      action = "function() vim.lsp.buf.code_action() end";
-      lua = true;
-    }
-    {
-      key = "-";
-      mode = "n";
-      silent = true;
-      action = ":Oil<CR>";
-    }
-    {
-      key = "<leader>sr";
-      mode = [
-        "n"
-        "x"
-      ];
-      silent = true;
-      action = ":GrugFar<CR>";
-    }
-    {
-      key = "<leader>sf";
-      mode = "n";
-      silent = true;
-      action = ":lua require('grug-far').open({ prefills = { search = vim.fn.expand('<cword>'), paths = vim.fn.expand('%') } })<CR>";
-    }
-    {
-      key = "<leader>sF";
-      mode = "n";
-      silent = true;
-      action = ":lua require('grug-far').open({ prefills = { search = vim.fn.expand('<cword>') } })<CR>";
-    }
-    {
-      key = "<leader>sf";
-      mode = "v";
-      silent = true;
-      action = ":lua require('grug-far').with_visual_selection({ prefills = { paths = vim.fn.expand('%') } })<CR>";
-    }
-    {
-      key = "<leader>sF";
-      mode = "v";
-      silent = true;
-      action = ":lua require('grug-far').with_visual_selection()<CR>";
-    }
-    {
-      key = "<leader>il";
-      mode = "n";
-      silent = true;
-      action = ":lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>";
-    }
-    {
-      key = "<C-j>";
-      mode = "n";
-      silent = true;
       action = ":m .+1<CR>==";
+      desc = "Move line down";
     }
     {
-      key = "<C-k>";
+      key = "<leader>k";
       mode = "n";
-      silent = true;
       action = ":m .-2<CR>==";
+      desc = "Move line up";
     }
     {
-      key = "<C-j>";
+      key = "J";
       mode = "v";
-      silent = true;
       action = ":m '>+1<CR>gv=gv";
+      desc = "Move selection down";
     }
     {
-      key = "<C-k>";
+      key = "K";
       mode = "v";
-      silent = true;
       action = ":m '<-2<CR>gv=gv";
-    }
-    {
-      key = "<leader>mc";
-      mode = "n";
-      silent = true;
-      action = ":MCstart<CR>";
+      desc = "Move selection up";
     }
   ];
 }

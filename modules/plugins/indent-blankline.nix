@@ -6,19 +6,21 @@ let
   ];
 in
 {
-  visuals.indent-blankline = {
-    enable = true;
-    setupOpts = {
-      scope.enabled = false;
-      indent.char = "▏";
-      exclude.filetypes = ignore_filetypes;
+  vim = {
+    visuals.indent-blankline = {
+      enable = true;
+      setupOpts = {
+        scope.enabled = false;
+        indent.char = "▏";
+        exclude.filetypes = ignore_filetypes;
+      };
     };
-  };
-  mini.indentscope = {
-    enable = true;
-    setupOpts = {
-      symbol = "▏";
-      inherit ignore_filetypes;
+    mini.indentscope = {
+      enable = true;
+      setupOpts = {
+        symbol = "▏";
+        inherit ignore_filetypes;
+      };
     };
   };
 }

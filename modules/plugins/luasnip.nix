@@ -1,91 +1,93 @@
 {
-  snippets.luasnip = {
-    enable = true;
-    customSnippets.snipmate = {
-      nix = [
-        {
-          trigger = "_nixmd";
-          body = ''
-            {
-              flake.nixosModules.$1 = _: {
-                $2
-              };
-            }
-          '';
-        }
-        {
-          trigger = "_hmmd";
-          body = ''
-            {
-              flake.homeModules.$1 = _: {
-                $2
-              };
-            }
-          '';
-        }
-      ];
-      dart = [
-        {
-          trigger = "_stfw";
-          body = ''
-            class $1 extends StatefulWidget {
-              const $1({super.key});
-
-              @override
-              State<$1> createState() => _$1State();
-            }
-
-            class _$1State extends State<$1> {
-              @override
-              Widget build(BuildContext context) {
-                return const Placeholder();
+  vim = {
+    snippets.luasnip = {
+      enable = true;
+      customSnippets.snipmate = {
+        nix = [
+          {
+            trigger = "_nixmd";
+            body = ''
+              {
+                flake.nixosModules.$1 = _: {
+                  $2
+                };
               }
-            }
-          '';
-        }
-        {
-          trigger = "_stlw";
-          body = ''
-            class $1 extends StatelessWidget {
-              const $1({super.key});
-
-              @override
-              Widget build(BuildContext context) {
-                return const Placeholder();
+            '';
+          }
+          {
+            trigger = "_hmmd";
+            body = ''
+              {
+                flake.homeModules.$1 = _: {
+                  $2
+                };
               }
-            }
-          '';
-        }
-        {
-          trigger = "_csfw";
-          body = ''
-            class $1 extends ConsumerStatefulWidget {
-              const $1({super.key});
+            '';
+          }
+        ];
+        dart = [
+          {
+            trigger = "_stfw";
+            body = ''
+              class $1 extends StatefulWidget {
+                const $1({super.key});
 
-              @override
-              ConsumerState<$1> createState() => _$1State();
-            }
+                @override
+                State<$1> createState() => _$1State();
+              }
 
-            class _$1State extends ConsumerState<$1> {
-              @override
-              Widget build(BuildContext context) {
-                return const Placeholder();
+              class _$1State extends State<$1> {
+                @override
+                Widget build(BuildContext context) {
+                  return const Placeholder();
+                }
               }
-            }
-          '';
-        }
-        {
-          trigger = "_cslw";
-          body = ''
-            class $1 extends ConsumerWidget {
-              @override
-              Widget build(BuildContext context, WidgetRef ref) {
-                return const Placeholder();
+            '';
+          }
+          {
+            trigger = "_stlw";
+            body = ''
+              class $1 extends StatelessWidget {
+                const $1({super.key});
+
+                @override
+                Widget build(BuildContext context) {
+                  return const Placeholder();
+                }
               }
-            }
-          '';
-        }
-      ];
+            '';
+          }
+          {
+            trigger = "_csfw";
+            body = ''
+              class $1 extends ConsumerStatefulWidget {
+                const $1({super.key});
+
+                @override
+                ConsumerState<$1> createState() => _$1State();
+              }
+
+              class _$1State extends ConsumerState<$1> {
+                @override
+                Widget build(BuildContext context) {
+                  return const Placeholder();
+                }
+              }
+            '';
+          }
+          {
+            trigger = "_cslw";
+            body = ''
+              class $1 extends ConsumerWidget {
+                @override
+                Widget build(BuildContext context, WidgetRef ref) {
+                  return const Placeholder();
+                }
+              }
+            '';
+          }
+        ];
+      };
     };
   };
 }
