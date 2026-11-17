@@ -10,7 +10,8 @@ This is my Neovim config using [nvf](https://github.com/NotAShelf/nvf).
 - Nix
 - Bash
 - Rust
-- C/C++
+- C/C++ (LSP by [clice](https://github.com/clice-io/clice), which reads the
+  project's `compile_commands.json`)
 
 More languages (Lua, Java, Dart, Go, TypeScript, CSS, HTML, TOML) are available
 and can be enabled by uncommenting them in `modules/languages/default.nix`.
@@ -22,6 +23,7 @@ and can be enabled by uncommenting them in `modules/languages/default.nix`.
   - `config.nix`, `options.nix`, `theme.nix`, `keymaps.nix`: general settings and keymaps
   - `plugins/`: one file per plugin, holding its config and its keymaps
   - `languages/`: one file per language (LSP, treesitter, formatter and its packages)
+- `pkgs/`: packages nixpkgs lacks (the clice release and its Neovim client)
 - `runtime/`: plain Lua added to the runtime path
   - `ftdetect/`, `ftplugin/`, `syntax/`: per-filetype detection and settings
   - `plugin/`: autocommands and user commands loaded on startup
