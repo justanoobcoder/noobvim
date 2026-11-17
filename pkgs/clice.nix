@@ -11,16 +11,22 @@ stdenv.mkDerivation (finalAttrs: {
 
   src =
     let
-      hashes = {
-        x86_64-linux = "sha256-ndGBqsnIHK52slXpU9ohyeYD/FtAZEfrJsler2ftlpo=";
-        aarch64-linux = "sha256-t+ts5lr7nNxSKdrfGxpWFIXc2ykqBtaIV81gl3FvCLo=";
+      sources = {
+        # TODO(clice-io/clice#1100): back to the upstream release once one carries the fix.
+        # 1.0.0 plus the fix for GCC's split -D/-U, which breaks every file under Nix's
+        # gcc wrapper ("macro name must be an identifier"), from a pre-release of the fork.
+        x86_64-linux = {
+          url = "https://github.com/justanoobcoder/clice/releases/download/v1.0.0-gcc-split-macros/clice-1.0.0-gde60f264.x86_64-unknown-linux-gnu.tar.gz";
+          hash = "sha256-xNnD13nbLzavaHz67AsjY2xOx+RP7B9dGF3Mu4W2qww=";
+        };
+        aarch64-linux = {
+          url = "https://github.com/clice-io/clice/releases/download/v${finalAttrs.version}/clice-${finalAttrs.version}.aarch64-unknown-linux-gnu.tar.gz";
+          hash = "sha256-t+ts5lr7nNxSKdrfGxpWFIXc2ykqBtaIV81gl3FvCLo=";
+        };
       };
       inherit (stdenv.hostPlatform) system;
     in
-    fetchurl {
-      url = "https://github.com/clice-io/clice/releases/download/v${finalAttrs.version}/clice-${finalAttrs.version}.${stdenv.hostPlatform.uname.processor}-unknown-linux-gnu.tar.gz";
-      hash = hashes.${system} or (throw "clice: no release for ${system}");
-    };
+    fetchurl (sources.${system} or (throw "clice: no release for ${system}"));
 
   nativeBuildInputs = [ autoPatchelfHook ];
 
